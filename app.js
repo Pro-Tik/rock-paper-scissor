@@ -1,10 +1,12 @@
 let userScore=0;
 let compScore=0;
+let drawscore=0;
 const choices = document.querySelectorAll(".choice");
 const msg= document.querySelector(".msg");
 const scissor =document.querySelector("#scissoring");
 const userscorepara = document.querySelector("#user-score");
 const compscorepara = document.querySelector("#comp-score");
+const drawscorepara = document.querySelector("#draw-score");
 
 const genCompChoice = () =>{
     let options =["rock","paper","scissor"];
@@ -12,6 +14,8 @@ const genCompChoice = () =>{
     return options[ranIdx];
 }
 const draw =()=>{
+    drawscore++;
+    drawscorepara.innerText=`${drawscore}`;
     console.log("The Game Was  Draw");
     msg.innerText = "It was a draw! Play Again!";
     msg.style.backgroundColor="black"
