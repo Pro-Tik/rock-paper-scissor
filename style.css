@@ -1,0 +1,159 @@
+/* 1. Global Reset: Ensures padding doesn't make elements wider than 100% */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif; /* Optional: Makes font cleaner */
+}
+
+body {
+    /* Center content slightly on the page */
+    padding-bottom: 50px;
+    background-color: #fff;
+}
+
+/* 2. Heading Styling */
+#heading {
+    width: 100%;
+    color: aliceblue;
+    background-color: blueviolet;
+    text-align: center;
+    padding: 1rem; /* Use padding instead of height */
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds depth */
+}
+
+/* 3. Choices Container */
+.choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem; /* Uses 'rem' for scalable spacing */
+    flex-wrap: wrap; /* Allows items to wrap on very small screens */
+}
+
+/* 4. Interactive Images */
+.choices img {
+    height: 160px; /* Default size for desktop */
+    width: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer; /* Shows a hand icon on hover */
+    
+    /* Smooth animation setup */
+    transition: all 0.3s ease; 
+    border: 4px solid transparent; /* Prepares border for hover */
+}
+
+/* Hover Effect (Desktop) */
+.choices img:hover {
+    transform: scale(1.1) rotate(5deg); /* Zoom and slight tilt */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: blueviolet;
+}
+
+/* Active/Click Effect (Mobile/Desktop) */
+.choices img:active {
+    transform: scale(0.95); /* Button press effect */
+}
+
+/* 5. Message Box */
+.msg-container {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem; /* Prevents touching screen edges on mobile */
+}
+
+.msg {
+    /* Use max-width so it shrinks on phones but stays wide on desktop */
+    width: 100%; 
+    max-width: 400px; 
+    
+    background-color: black;
+    color: white;
+    font-size: 1.5rem; 
+    font-weight: bolder;
+    border-radius: 2rem;
+    
+    /* Formatting text */
+    text-align: center;
+    padding: 1rem 2rem; /* Padding defines the height naturally */
+    line-height: 1.5;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 6. Score Board */
+.scoreclass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.Scorecount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: 2px solid blueviolet;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    min-width: 100px; /* Ensures boxes are consistent size */
+}
+
+.Scorecount p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS (Media Queries)
+   This section runs only on screens smaller than 768px
+   ========================================= */
+@media (max-width: 768px) {
+    #heading {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .choices {
+        gap: 1rem; /* Reduce gap between rock/paper/scissors */
+    }
+
+    .choices img {
+        /* Make images responsive: 28% of screen width */
+        width: 28vw; 
+        height: 28vw; 
+        /* Cap the max size so they don't get too big */
+        max-width: 130px; 
+        max-height: 130px;
+    }
+
+    .msg-container {
+        margin-top: 2rem;
+    }
+
+    .msg {
+        font-size: 1.2rem; /* Smaller text */
+        padding: 1rem;
+    }
+    
+    .scoreclass {
+        gap: 1rem; /* Bring scores closer */
+        margin-top: 2rem;
+    }
+    
+    .Scorecount {
+        padding: 0.5rem 1rem;
+        min-width: 80px;
+    }
+}
+#scissoring{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
